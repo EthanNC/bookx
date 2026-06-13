@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "cf-typegen": "wrangler types",
+    "check": "biome check",
     "dev": "react-router dev",
+    "fix": "biome check --write",
+    "format": "biome format --write",
+    "lint": "biome lint",
     "preview": "npm run build && vite preview",
     "typecheck": "react-router typegen && tsc -b"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2",
     "@cloudflare/vite-plugin": "^1.40.2",
     "@cloudflare/workers-types": "4.20260613.1",
     "@react-router/dev": "^7.17.0",
