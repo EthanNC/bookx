@@ -6,8 +6,10 @@ import type { Route } from "./+types/employees";
 import { useStatsDispatch } from "~/components/StatsContext";
 import { useEffect } from "react";
 
-export async function loader({ context, request }: Route.LoaderArgs) {
-  const session = context.cloudflare.env.DB.withSession("first-unconstrained");
+import { Resource } from "sst/resource";
+
+export async function loader({ request }: Route.LoaderArgs) {
+  const session = Resource.MyDatabase.withSession("first-unconstrained");
   const { searchParams } = new URL(request.url);
   const count = true;
   const page = parseInt(searchParams.get("page") as string) || 1;

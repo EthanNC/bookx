@@ -3,7 +3,7 @@ import { prepareStatements, createSQLLog } from "~/lib/utils";
 import type { Route } from "./+types/search";
 import { useStatsDispatch } from "~/components/StatsContext";
 import { useEffect, useState } from "react";
-import { Resource } from "sst";
+import { Resource } from "sst/resource";
 
 export async function loader({ context, request }: Route.LoaderArgs) {
   const session = Resource.MyDatabase.withSession("first-unconstrained");

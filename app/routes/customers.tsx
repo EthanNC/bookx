@@ -3,7 +3,7 @@ import { prepareStatements, createSQLLog } from "~/lib/utils";
 import { Paginate } from "~/components";
 
 import type { Route } from "./+types/customers";
-import { Resource } from "sst";
+import { Resource } from "sst/resource";
 
 interface Customer {
   Id: string;

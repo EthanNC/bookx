@@ -7,7 +7,7 @@ import { useStatsDispatch } from "~/components/StatsContext";
 import { AddTableField } from "~/components";
 
 import type { Route } from "./+types/employee.$id";
-import { Resource } from "sst";
+import { Resource } from "sst/resource";
 
 export async function loader({ context, params }: Route.LoaderArgs) {
   const session = Resource.MyDatabase.withSession("first-unconstrained");

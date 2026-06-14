@@ -5,7 +5,7 @@ import { Paginate } from "~/components";
 import type { Route } from "./+types/suppliers";
 import { useStatsDispatch } from "~/components/StatsContext";
 import { useEffect } from "react";
-import { Resource } from "sst";
+import { Resource } from "sst/resource";
 
 export async function loader({ context, request }: Route.LoaderArgs) {
   const session = Resource.MyDatabase.withSession("first-unconstrained");

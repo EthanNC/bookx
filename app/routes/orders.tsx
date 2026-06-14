@@ -5,7 +5,7 @@ import { Paginate } from "~/components";
 import type { Route } from "./+types/orders";
 import { useStatsDispatch } from "~/components/StatsContext";
 import { useEffect } from "react";
-import { Resource } from "sst";
+import { Resource } from "sst/resource";
 
 export interface Order {
   Id: string;
