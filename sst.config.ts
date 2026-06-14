@@ -12,14 +12,10 @@ export default $config({
   async run() {
     const db = new sst.cloudflare.D1("MyDatabase");
 
-    const kv = new sst.cloudflare.Kv("MyKv");
-
     new sst.cloudflare.ReactRouter("MyWeb", {
-      link: [kv],
+      link: [db],
     });
 
-    return {
-      database: db.databaseId,
-    };
+    return {};
   },
 });

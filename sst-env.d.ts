@@ -7,7 +7,6 @@
 declare module "sst" {
   export interface Resource {
     "MyDatabase": import("@cloudflare/workers-types").D1Database
-    "MyKv": import("@cloudflare/workers-types").KVNamespace
     "MyWeb": {
       "type": "sst.cloudflare.ReactRouter"
       "url": string
