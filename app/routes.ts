@@ -1,4 +1,4 @@
-import { type RouteConfig, index, route } from "@react-router/dev/routes";
+import { index, type RouteConfig, route } from "@react-router/dev/routes";
 
 export default [
   index("routes/home.tsx"),
@@ -9,6 +9,8 @@ export default [
   route("/employee/:id", "routes/employee.$id.tsx"),
   route("/suppliers", "routes/suppliers.tsx"),
   route("/supplier/:id", "routes/supplier.$id.tsx"),
+  route("/supplier-invoices", "routes/supplier-invoices.tsx"),
+  route("/supplier-invoice/:id", "routes/supplier-invoice.$id.tsx"),
   route("/products", "routes/products.tsx"),
   route("/product/:id", "routes/product.$id.tsx"),
   route("/orders", "routes/orders.tsx"),
