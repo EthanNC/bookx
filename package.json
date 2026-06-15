@@ -9,7 +9,11 @@
     "fix": "biome check --write",
     "format": "biome format --write",
     "lint": "biome lint",
-    "typecheck": "react-router typegen && tsc -b"
+    "typecheck": "react-router typegen && tsc -b",
+    "db:drop": "sst shell -- bun scripts/db.ts drop",
+    "db:reset": "sst shell -- bun scripts/db.ts reset",
+    "db:reset-prod": "sst shell --stage production -- bun scripts/db.ts reset",
+    "db:drop-prod": "sst shell --stage production -- bun scripts/db.ts drop"
   },
   "devDependencies": {
     "@biomejs/biome": "^2",

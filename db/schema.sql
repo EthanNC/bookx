@@ -26,4 +26,8 @@ CREATE TABLE IF NOT EXISTS "CustomerDemographic" ( "Id" VARCHAR(8000) PRIMARY KE
 CREATE TABLE IF NOT EXISTS "Region" ( "Id" INTEGER PRIMARY KEY, "RegionDescription" VARCHAR(8000) NULL);
 CREATE TABLE IF NOT EXISTS "Territory" ( "Id" VARCHAR(8000) PRIMARY KEY, "TerritoryDescription" VARCHAR(8000) NULL, "RegionId" INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS "EmployeeTerritory" ( "Id" VARCHAR(8000) PRIMARY KEY, "EmployeeId" INTEGER NOT NULL, "TerritoryId" VARCHAR(8000) NULL);
+CREATE TABLE IF NOT EXISTS "CustomerPayment" ( "Id" INTEGER PRIMARY KEY, "OrderId" INTEGER NOT NULL, "CustomerId" VARCHAR(8000) NULL, "PaymentDate" VARCHAR(8000) NULL, "Amount" DECIMAL NOT NULL, "Method" VARCHAR(20) NULL, "Reference" VARCHAR(50) NULL);
+CREATE TABLE IF NOT EXISTS "SupplierInvoice" ( "Id" INTEGER PRIMARY KEY, "SupplierId" INTEGER NOT NULL, "InvoiceDate" VARCHAR(8000) NULL, "DueDate" VARCHAR(8000) NULL, "TotalAmount" DECIMAL NOT NULL, "Status" VARCHAR(20) NULL, "Reference" VARCHAR(50) NULL);
+CREATE TABLE IF NOT EXISTS "SupplierInvoiceDetail" ( "Id" INTEGER PRIMARY KEY, "SupplierInvoiceId" INTEGER NOT NULL, "ProductId" INTEGER NOT NULL, "Quantity" INTEGER NOT NULL, "UnitCost" DECIMAL NOT NULL, "LineTotal" DECIMAL NOT NULL);
+CREATE TABLE IF NOT EXISTS "SupplierPayment" ( "Id" INTEGER PRIMARY KEY, "SupplierInvoiceId" INTEGER NOT NULL, "PaymentDate" VARCHAR(8000) NULL, "Amount" DECIMAL NOT NULL, "Method" VARCHAR(20) NULL, "Reference" VARCHAR(50) NULL);
 CREATE VIEW [ProductDetails_V] as select p.*, c.CategoryName, c.Description as [CategoryDescription], s.CompanyName as [SupplierName], s.Region as [SupplierRegion] from [Product] p join [Category] c on p.CategoryId = c.id join [Supplier] s on s.id = p.SupplierId;
