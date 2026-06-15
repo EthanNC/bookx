@@ -1,18 +1,3 @@
-PRAGMA foreign_keys=off;
-DROP TABLE IF EXISTS "Employee";
-DROP TABLE IF EXISTS "Category";
-DROP TABLE IF EXISTS "Customer";
-DROP TABLE IF EXISTS "Shipper";
-DROP TABLE IF EXISTS "Supplier";
-DROP TABLE IF EXISTS "Order";
-DROP TABLE IF EXISTS "Product";
-DROP TABLE IF EXISTS "OrderDetail";
-DROP TABLE IF EXISTS "CustomerCustomerDemo";
-DROP TABLE IF EXISTS "CustomerDemographic";
-DROP TABLE IF EXISTS "Region";
-DROP TABLE IF EXISTS "Territory";
-DROP TABLE IF EXISTS "EmployeeTerritory";
-DROP VIEW IF EXISTS [ProductDetails_V];
 CREATE TABLE IF NOT EXISTS "Employee" ( "Id" INTEGER PRIMARY KEY, "LastName" VARCHAR(8000) NULL, "FirstName" VARCHAR(8000) NULL, "Title" VARCHAR(8000) NULL, "TitleOfCourtesy" VARCHAR(8000) NULL, "BirthDate" VARCHAR(8000) NULL, "HireDate" VARCHAR(8000) NULL, "Address" VARCHAR(8000) NULL, "City" VARCHAR(8000) NULL, "Region" VARCHAR(8000) NULL, "PostalCode" VARCHAR(8000) NULL, "Country" VARCHAR(8000) NULL, "HomePhone" VARCHAR(8000) NULL, "Extension" VARCHAR(8000) NULL, "Photo" BLOB NULL, "Notes" VARCHAR(8000) NULL, "ReportsTo" INTEGER NULL, "PhotoPath" VARCHAR(8000) NULL);
 CREATE TABLE IF NOT EXISTS "Category" ( "Id" INTEGER PRIMARY KEY, "CategoryName" VARCHAR(8000) NULL, "Description" VARCHAR(8000) NULL);
 CREATE TABLE IF NOT EXISTS "Customer" ( "Id" VARCHAR(8000) PRIMARY KEY, "CompanyName" VARCHAR(8000) NULL, "ContactName" VARCHAR(8000) NULL, "ContactTitle" VARCHAR(8000) NULL, "Address" VARCHAR(8000) NULL, "City" VARCHAR(8000) NULL, "Region" VARCHAR(8000) NULL, "PostalCode" VARCHAR(8000) NULL, "Country" VARCHAR(8000) NULL, "Phone" VARCHAR(8000) NULL, "Fax" VARCHAR(8000) NULL);
@@ -30,4 +15,4 @@ CREATE TABLE IF NOT EXISTS "CustomerPayment" ( "Id" INTEGER PRIMARY KEY, "OrderI
 CREATE TABLE IF NOT EXISTS "SupplierInvoice" ( "Id" INTEGER PRIMARY KEY, "SupplierId" INTEGER NOT NULL, "InvoiceDate" VARCHAR(8000) NULL, "DueDate" VARCHAR(8000) NULL, "TotalAmount" DECIMAL NOT NULL, "Status" VARCHAR(20) NULL, "Reference" VARCHAR(50) NULL);
 CREATE TABLE IF NOT EXISTS "SupplierInvoiceDetail" ( "Id" INTEGER PRIMARY KEY, "SupplierInvoiceId" INTEGER NOT NULL, "ProductId" INTEGER NOT NULL, "Quantity" INTEGER NOT NULL, "UnitCost" DECIMAL NOT NULL, "LineTotal" DECIMAL NOT NULL);
 CREATE TABLE IF NOT EXISTS "SupplierPayment" ( "Id" INTEGER PRIMARY KEY, "SupplierInvoiceId" INTEGER NOT NULL, "PaymentDate" VARCHAR(8000) NULL, "Amount" DECIMAL NOT NULL, "Method" VARCHAR(20) NULL, "Reference" VARCHAR(50) NULL);
-CREATE VIEW [ProductDetails_V] as select p.*, c.CategoryName, c.Description as [CategoryDescription], s.CompanyName as [SupplierName], s.Region as [SupplierRegion] from [Product] p join [Category] c on p.CategoryId = c.id join [Supplier] s on s.id = p.SupplierId;
+CREATE VIEW IF NOT EXISTS [ProductDetails_V] as select p.*, c.CategoryName, c.Description as [CategoryDescription], s.CompanyName as [SupplierName], s.Region as [SupplierRegion] from [Product] p join [Category] c on p.CategoryId = c.id join [Supplier] s on s.id = p.SupplierId;
