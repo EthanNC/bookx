@@ -14,6 +14,7 @@ export default $config({
 
     new sst.cloudflare.ReactRouter("MyWeb", {
       link: [db],
+      domain: "bookx.ethannc.dev",
     });
 
     return {};
