@@ -2,6 +2,7 @@ PRAGMA foreign_keys=off;
 DROP TABLE IF EXISTS "SupplierPayment";
 DROP TABLE IF EXISTS "SupplierInvoiceDetail";
 DROP TABLE IF EXISTS "SupplierInvoice";
+DROP VIEW IF EXISTS [CustomerReceivable_V];
 DROP TABLE IF EXISTS "CustomerPayment";
 DROP VIEW IF EXISTS [ProductDetails_V];
 DROP TABLE IF EXISTS "EmployeeTerritory";
