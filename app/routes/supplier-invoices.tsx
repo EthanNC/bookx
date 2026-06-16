@@ -100,7 +100,7 @@ export default function SupplierInvoices({ loaderData }: Route.ComponentProps) {
       {invoices.length ? (
         <div className="card has-table">
           <header className="card-header">
-            <p className="card-header-title">Supplier Invoices</p>
+            <p className="card-header-title">Payables</p>
             <button
               className="card-header-icon"
               type="button"
@@ -115,7 +115,7 @@ export default function SupplierInvoices({ loaderData }: Route.ComponentProps) {
             <table>
               <thead>
                 <tr>
-                  <th>Reference</th>
+                  <th>Invoice Reference</th>
                   <th>Supplier</th>
                   <th>Invoice Date</th>
                   <th>Due Date</th>
