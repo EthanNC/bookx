@@ -15,7 +15,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { Aside, Nav } from "~/components";
+import { Aside } from "~/components";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -109,7 +109,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <StatsContext.Provider value={stats}>
           <StatsDispatchContext.Provider value={dispatch}>
-            <Nav />
             <Aside />
             <section className="section main-section">{children}</section>
             <ScrollRestoration />

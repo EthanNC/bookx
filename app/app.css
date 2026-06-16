@@ -7,7 +7,7 @@ We've ported old SCSS code to PostCSS + TailwindCSS. This approach is not recomm
 @import "tailwindcss/utilities.css" layer(utilities);
 
 body {
-  @apply bg-gray-50 text-base pt-14 lg:pl-60;
+  @apply bg-gray-50 text-base lg:pl-60;
 }
 
 #app {
@@ -66,10 +66,6 @@ body {
   @apply left-0;
 }
 
-.aside-mobile-expanded .navbar {
-  @apply ml-60;
-}
-
 .aside-mobile-expanded #app {
   @apply ml-60;
 }
@@ -119,119 +115,9 @@ body {
   @apply block bg-gray-600;
 }
 
-/* @import "./css/navbar.css"; */
-@layer components {
-  .navbar,
-  .navbar-menu,
-  .navbar-start,
-  .navbar-end {
-    @apply lg:flex lg:items-stretch;
-  }
-
-  .navbar {
-    @apply top-0 left-0 right-0 fixed flex bg-white h-14 border-b border-gray-100 z-30 w-screen transition-all
-      lg:pl-60 lg:w-auto;
-  }
-
-  .navbar-brand {
-    @apply flex-1 items-stretch flex h-14;
-  }
-
-  .navbar-brand.is-right {
-    @apply flex-none lg:hidden;
-  }
-
-  .navbar-brand .navbar-item {
-    @apply items-center flex;
-  }
-
-  .navbar-item,
-  .navbar-link {
-    @apply block py-2 px-3;
-  }
-
-  .navbar-item {
-    @apply flex-grow-0 flex-shrink-0 relative lg:flex lg:items-center;
-  }
-
-  .navbar-item.mobile-aside-button {
-    @apply lg:hidden;
-  }
-
-  .navbar-item.has-divider {
-    @apply lg:border-r lg:border-gray-100;
-  }
-
-  .navbar-item > .navbar-link {
-    @apply flex items-center bg-gray-100 lg:bg-transparent;
-  }
-
-  .navbar-item .icon + span {
-    @apply ml-2;
-  }
-
-  .navbar-item.has-user-avatar > .navbar-link {
-    @apply flex items-center;
-  }
-
-  .navbar-item.has-user-avatar .user-avatar {
-    @apply w-6 h-6 mr-3 inline-flex;
-  }
-
-  .navbar-item.dropdown {
-    @apply p-0 lg:py-2 lg:px-3;
-  }
-
-  .navbar-item.dropdown > .navbar-link .icon:last-child {
-    @apply hidden lg:inline-flex;
-  }
-
-  .navbar-item.desktop-icon-only {
-    @apply lg:w-16 lg:justify-center;
-  }
-
-  .navbar-item.desktop-icon-only span:last-child {
-    @apply lg:hidden;
-  }
-
-  .navbar-item .input {
-    @apply border-0;
-  }
-
-  .navbar-menu {
-    max-height: calc(100vh - 3.5rem);
-    @apply hidden absolute w-screen top-14 left-0 bg-white border-b border-gray-100 overflow-auto shadow
-      lg:flex lg:flex-grow lg:static lg:border-b-0 lg:overflow-visible lg:shadow-none;
-  }
-
-  .navbar-menu.active {
-    @apply block;
-  }
-
-  .navbar-end {
-    @apply lg:justify-end lg:ml-auto;
-  }
-
-  .navbar-item .navbar-dropdown {
-    @apply text-sm lg:border-gray-200 lg:border-t-2
-      lg:bg-white lg:absolute lg:top-full lg:left-0 lg:min-w-full lg:z-20 lg:shadow-md lg:rounded-b;
-  }
-
-  .navbar-item:not(.active) .navbar-dropdown {
-    @apply lg:hidden;
-  }
-
-  .navbar-item.active:not(.dropdown),
-  .navbar-item.active.dropdown > .navbar-link {
-    @apply text-blue-500;
-  }
-}
 /* @import "./css/button.css";   */
 .button {
-  @apply inline-flex bg-white text-black border-gray-50 border cursor-pointer justify-center px-4 py-2 text-center
-      whitespace-nowrap rounded
-      hover:border-gray-500
-      focus:outline-none;
+  @apply inline-flex bg-white text-black border-gray-50 border cursor-pointer justify-center px-4 py-2 text-center whitespace-nowrap rounded hover:border-gray-500 focus:outline-none;
 }
 
 .button.addon-right {
@@ -432,8 +318,7 @@ thead {
 }
 
 tr {
-  @apply max-w-full block relative border-b-4 border-gray-100
-    lg:table-row lg:border-b-0;
+  @apply max-w-full block relative border-b-4 border-gray-100 lg:table-row lg:border-b-0;
 }
 
 tr:last-child {
@@ -445,8 +330,7 @@ th {
 }
 
 td {
-  @apply flex justify-between text-right py-3 px-4 align-top border-b border-gray-100
-    lg:table-cell lg:text-left lg:py-2 lg:px-3 lg:align-middle lg:border-b-0;
+  @apply flex justify-between text-right py-3 px-4 align-top border-b border-gray-100 lg:table-cell lg:text-left lg:py-2 lg:px-3 lg:align-middle lg:border-b-0;
 }
 
 tr:nth-child(odd) td {
@@ -472,8 +356,7 @@ th.checkbox-cell {
 }
 
 td.progress-cell progress {
-  @apply flex w-2/5 self-center
-    lg:w-full;
+  @apply flex w-2/5 self-center lg:w-full;
 }
 
 td.image-cell {
@@ -704,8 +587,7 @@ td.image-cell .image {
 
 .modal-card {
   max-height: calc(100vh - 160px);
-  @apply w-full flex flex-col overflow-hidden relative
-    lg:mx-auto lg:w-2/5;
+  @apply w-full flex flex-col overflow-hidden relative lg:mx-auto lg:w-2/5;
 }
 
 .modal-card-body {

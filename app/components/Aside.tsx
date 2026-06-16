@@ -4,6 +4,15 @@ const Aside = () => {
   return (
     <aside className="aside is-placed-left is-expanded">
       <div className="aside-tools">
+        <button
+          type="button"
+          onClick={() => {
+            document.documentElement.classList.toggle("aside-mobile-expanded");
+          }}
+          className="lg:hidden text-white"
+        >
+          <span className="icon material-icons">menu</span>
+        </button>
         <div>
           <b className="font-black">Northwind</b> Traders
         </div>
@@ -46,7 +55,7 @@ const Aside = () => {
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               <span className="icon material-icons">receipt_long</span>
-              <span className="menu-item-label">Supplier Invoices</span>
+              <span className="menu-item-label">Payables</span>
             </NavLink>
           </li>
           <li>
