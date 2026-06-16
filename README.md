@@ -1,7 +1,6 @@
 # bookx
 
 Bookkeeping demo on the [Northwind](https://github.com/jpwhite3/northwind-SQLite3) 
-[Sample database (Microsoft)](https://learn.microsoft.com/en-us/previous-versions/sql/2008-r2/ms130214(v=sql.110)) — original sample
 
 ## Accounting extensions
 
